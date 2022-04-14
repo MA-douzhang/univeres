@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="50dp"
+android:orientation="horizontal"
+android:background="@color/white"
+>
+<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:id="@+id/idTopDemo1"
+        android:orientation="vertical"
+        android:gravity="center">
+    <ImageView android:layout_width="47dp"
+               android:layout_height="37dp"
+               android:id="@+id/idTopDemo1Image"
+               android:background="@drawable/homeclick"
+    />
+
+
+</LinearLayout>
+<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:id="@+id/idTopDemo2"
+        android:orientation="vertical"
+        android:gravity="center">
+    <ImageView android:layout_width="47dp"
+               android:layout_height="37dp"
+               android:id="@+id/idTopDemo2Image"
+               android:background="@drawable/universeclick"/>
+</LinearLayout>
+<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:id="@+id/idTopDemo3"
+        android:orientation="vertical"
+        android:gravity="center">
+    <ImageView android:layout_width="47dp"
+               android:layout_height="37dp"
+               android:id="@+id/idTopDemo3Image"
+               android:background="@drawable/chatclick"/>
+
+</LinearLayout>
+<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:id="@+id/idMy"
+        android:orientation="vertical"
+        android:gravity="center">
+    <ImageView android:layout_width="47dp"
+               android:layout_height="37dp"
+               android:id="@+id/myImage"
+               android:background="@drawable/myclick"/>
+</LinearLayout>
+
+</LinearLayout>

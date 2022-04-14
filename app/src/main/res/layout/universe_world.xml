@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainPlaceActivity"
+        android:background="@drawable/universeback">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:orientation="vertical" tools:layout_editor_absoluteY="0dp"
+                  tools:layout_editor_absoluteX="0dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:text="宇宙世界"
+                  android:textSize="36dp"
+                  android:textColor="@color/black"
+                  android:gravity="left"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_marginTop="5dp"
+                      android:clickable="true">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="45dp"
+                      android:text="星球聚集地"
+                      android:textSize="25dp"
+                      android:gravity="left"
+                      android:textColor="@color/black"
+                      tools:ignore="MissingConstraints"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="5"/>
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:text="更多"
+                      android:layout_weight="1"
+                      android:gravity="right"
+                      android:onClick="otherClickGather"
+                      android:textColor="@color/black"
+                      android:id="@+id/gatherPlace"/>
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="170dp"
+                     >
+            <include layout="@layout/item_text"/>
+
+        </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content" android:layout_height="45dp"
+                  android:text="星球活动"
+                  android:textSize="25dp"
+                  android:textColor="@color/black"
+                  tools:ignore="MissingConstraints"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                  android:layout_weight="5"/>
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:text="更多"
+                  android:layout_weight="1"
+                  android:gravity="right"
+                  android:onClick="otherClickActivity"
+                  android:textColor="@color/black"
+                  android:id="@+id/activity"/>
+
+    </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="170dp"
+                        >
+
+            <include layout="@layout/item_plane_activity"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="45dp"
+                      android:text="热门星球"
+                      android:textSize="25dp"
+                      android:textColor="@color/black"
+                      tools:ignore="MissingConstraints"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                      android:layout_weight="5"/>
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:text="更多"
+                      android:onClick="otherClickHot"
+                      android:layout_weight="1"
+                      android:gravity="right"
+                      android:textColor="@color/black"
+                      android:id="@+id/hot"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+
+        >
+            <include layout="@layout/item_plane_hot"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

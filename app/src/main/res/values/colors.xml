@@ -14,4 +14,5 @@
     <color name="skyBlue">#7DEBFC</color>
     <color name="shadow">#0AAFE9</color>
     <color name="gray">#8A8A8A</color>
+    <color name="button_registered">#8BEBFA</color>
 </resources>

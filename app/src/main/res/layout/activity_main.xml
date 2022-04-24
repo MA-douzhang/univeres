@@ -11,12 +11,12 @@ android:background="@color/white"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:id="@+id/idTopDemo1"
+        android:id="@+id/idHome"
         android:orientation="vertical"
         android:gravity="center">
     <ImageView android:layout_width="47dp"
                android:layout_height="37dp"
-               android:id="@+id/idTopDemo1Image"
+               android:id="@+id/idHomeImage"
                android:background="@drawable/homeclick"
     />
 
@@ -27,12 +27,12 @@ android:background="@color/white"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:id="@+id/idTopDemo2"
+        android:id="@+id/idCampusUniverse"
         android:orientation="vertical"
         android:gravity="center">
     <ImageView android:layout_width="47dp"
                android:layout_height="37dp"
-               android:id="@+id/idTopDemo2Image"
+               android:id="@+id/idCampusUniverseImage"
                android:background="@drawable/universeclick"/>
 </LinearLayout>
 <LinearLayout
@@ -40,12 +40,12 @@ android:background="@color/white"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:id="@+id/idTopDemo3"
+        android:id="@+id/idChat"
         android:orientation="vertical"
         android:gravity="center">
     <ImageView android:layout_width="47dp"
                android:layout_height="37dp"
-               android:id="@+id/idTopDemo3Image"
+               android:id="@+id/idChatImage"
                android:background="@drawable/chatclick"/>
 
 </LinearLayout>
@@ -59,7 +59,7 @@ android:background="@color/white"
         android:gravity="center">
     <ImageView android:layout_width="47dp"
                android:layout_height="37dp"
-               android:id="@+id/myImage"
+               android:id="@+id/idMyImage"
                android:background="@drawable/myclick"/>
 </LinearLayout>
 

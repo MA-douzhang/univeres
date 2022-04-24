@@ -44,12 +44,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/plane_hot_img3"
         />
-        <View
 
-                android:layout_width="154dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/plane"
-        />
     </LinearLayout>
 
 

@@ -32,17 +32,50 @@
                   android:gravity="center"/>
     </LinearLayout>
 
-        <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/planeactivity_img1"
-        />
-        <ImageButton
-
-                android:layout_width="154dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/planeactivity_img2"
-        />
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="名字"
+                      android:gravity="center"
+                      android:textSize="15dp"
+            />
+            <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/planeactivity_img1"
+            />
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="星球介绍"
+                      android:textSize="15dp"
+                      android:gravity="center"
+            />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="名字"
+                      android:gravity="center"
+                      android:textSize="15dp"
+            />
+            <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/planeactivity_img2"
+            />
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="星球介绍"
+                      android:textSize="15dp"
+                      android:gravity="center"
+            />
+        </LinearLayout>
         <View
 
                 android:layout_width="154dp"

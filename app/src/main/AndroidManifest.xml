@@ -22,12 +22,17 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".patherPlaceActivity"
-                android:label="@string/title_activity_pather_place">
+                android:name="universes_main.MainUniverseActivity">
         </activity>
         <activity
-                android:name=".MainPlaceActivity"
+                android:name="universes_main.planeActivityActivity"
                 android:label="@string/title_activity_pather_place">
+        </activity>
+        <activity android:name="universes_main.SearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

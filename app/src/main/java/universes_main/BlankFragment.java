@@ -1,14 +1,12 @@
-package com.example.mainnavigation;
+package universes_main;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.navigation.fragment.NavHostFragment;
+import com.example.mainnavigation.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,7 +22,6 @@ public class BlankFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mTextString;
     View rootView;
-
 
     public BlankFragment() {
         // Required empty public constructor
@@ -57,17 +54,22 @@ public class BlankFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         if(rootView==null)
             if(mTextString=="主页")
             rootView=inflater.inflate(R.layout.content_main, container, false);
             else if(mTextString=="宇宙世界") {
-                rootView = inflater.inflate(R.layout.universe_world, container, false);
+                rootView = inflater.inflate(R.layout.navigation_top_universe, container, false);
             }
             else if(mTextString=="聊天")
                 rootView=inflater.inflate(R.layout.content_main, container, false);
             else if(mTextString=="我的")
                 rootView=inflater.inflate(R.layout.fragment_first, container, false);
+            else if(mTextString=="好友")
+                rootView=inflater.inflate(R.layout.fragment_first, container, false);
+            else if(mTextString=="推荐")
+                rootView=inflater.inflate(R.layout.fragment_first, container, false);
+            else if(mTextString=="发现")
+                rootView=inflater.inflate(R.layout.universe_world, container, false);
         initView();
         return rootView;
     }
@@ -78,8 +80,5 @@ public class BlankFragment extends Fragment {
 
     //点击时的改变
     private void initView() {
-
-//        TextView textView=rootView.findViewById(R.id.text);
-//        textView.setText(mTextString);
     }
 }

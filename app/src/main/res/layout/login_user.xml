@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/apk/res-auto"
+        xmlns:tools2="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools2:layout_editor_absoluteX="0dp"
+        tools2:layout_editor_absoluteY="15dp">
+
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/login_button_bg"
+            android:onClick="onClick"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools2:ignore="MissingConstraints"
+            tools:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_constraintEnd_toEndOf="parent"
+            tools:layout_constraintStart_toStartOf="parent"
+            tools:layout_constraintWidth_percent=".8" />
+
+    <EditText
+            android:id="@+id/phone"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/login_edit_text_bg"
+            android:hint="  请输入你的手机号"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="30sp"
+            tools2:ignore="MissingConstraints"
+            tools:layout_constraintBottom_toTopOf="@+id/password"
+            tools:layout_constraintEnd_toEndOf="parent"
+            tools:layout_constraintStart_toStartOf="parent"
+            tools:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:layout_constraintWidth_percent=".8" />
+
+    <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/login_edit_text_bg"
+            android:hint="  密码"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="30sp"
+            tools2:ignore="MissingConstraints"
+            tools:layout_constraintBottom_toTopOf="@+id/button"
+            tools:layout_constraintEnd_toEndOf="parent"
+            tools:layout_constraintStart_toStartOf="parent"
+            tools:layout_constraintVertical_bias="1.0"
+            tools:layout_constraintWidth_percent=".8" />
+
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/login_background_image1"
+            tools2:ignore="MissingConstraints"
+            tools:layout_constraintEnd_toEndOf="parent"
+            tools:layout_constraintStart_toStartOf="parent"
+            tools:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/idLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:layout_constraintBottom_toTopOf="@+id/imageView"
+            tools:layout_constraintEnd_toEndOf="parent"
+            tools:layout_constraintStart_toStartOf="parent"
+            tools:layout_constraintTop_toTopOf="@+id/imageView"></LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

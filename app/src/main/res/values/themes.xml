@@ -1,9 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MainNavigation" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!-- 头部项目名-->
+    <style name="Theme.MainNavigation" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <!-- 按钮颜色-->
+        <item name="colorPrimary">@color/button_registered</item>
+        <!-- 下面这行代码是修改窗口头部背景颜色-->
+        <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -19,4 +22,5 @@
     </style>
     <style name="Theme.MainNavigation.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="Theme.MainNavigation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
 </resources>

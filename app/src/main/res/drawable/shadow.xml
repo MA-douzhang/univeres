@@ -1,5 +1,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid   android:color="@color/shadow"/>
+    <solid   android:color="@color/white"/>
     <!--圆角-->
     <corners android:radius="25dp"
              android:topLeftRadius="15dp"
@@ -8,7 +8,7 @@
              android:bottomRightRadius="15dp" />
     <!--描边-->
     <stroke android:width="5dp"
-            android:color="@color/shadow"
+            android:color="@color/button_registered"
             android:dashWidth="5dp"
             android:dashGap="0dp" />
 </shape>

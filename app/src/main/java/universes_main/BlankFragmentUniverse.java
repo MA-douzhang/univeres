@@ -1,6 +1,8 @@
 package universes_main;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -60,12 +62,14 @@ public class BlankFragmentUniverse extends Fragment implements View.OnClickListe
         initTabView();
         return rootView;
     }
+
+
     //与MainUniverseActivity类中实现类似
     private void initPager() {
         //三大板块滑动
         viewPager = rootView.findViewById(R.id.idUniverseViewPager);
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(BlankFragment.newInstance("好友"));
+        fragments.add(new FriendsFragment());
         fragments.add(BlankFragment.newInstance("推荐"));
         fragments.add(BlankFragment.newInstance("发现"));
         UniverseTopAdapter pagerAdapter = new UniverseTopAdapter(getChildFragmentManager(), getLifecycle(), fragments);

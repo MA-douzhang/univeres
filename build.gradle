@@ -19,6 +19,12 @@ allprojects {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
+repositories {
+    google()
+    mavenCentral()
+    maven { url 'http://developer.huawei.com/repo'} //如果需要使用华为推送HMS，则需要加上此句
+}
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

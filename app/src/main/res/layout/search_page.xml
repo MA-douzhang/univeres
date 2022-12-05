@@ -20,13 +20,20 @@
                 android:ems="10"
                 android:hint="搜索"
                 android:textColorHint="#95A1AA"
-                android:id="@+id/search_text"
+                android:id="@+id/editTextSearchFriend"
                 android:inputType="text"
                 android:selectAllOnFocus="true"
                 android:background="@color/white"
                 android:layout_margin="20dp"
                 android:layout_marginTop="15dp"
                 android:textSize="24sp"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonAddFriend"
+                android:text="添加"
+                android:textSize="20dp"
+                android:layout_gravity="right"
+        />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

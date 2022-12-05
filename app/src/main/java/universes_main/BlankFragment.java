@@ -1,5 +1,6 @@
 package universes_main;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -61,7 +62,7 @@ public class BlankFragment extends Fragment {
                 rootView = inflater.inflate(R.layout.navigation_top_universe, container, false);
             }
             else if(mTextString=="聊天")
-                rootView=inflater.inflate(R.layout.content_main, container, false);
+                rootView=inflater.inflate(R.layout.fragment_first, container, false);
             else if(mTextString=="我的")
                 rootView=inflater.inflate(R.layout.fragment_first, container, false);
             else if(mTextString=="好友")

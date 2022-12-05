@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_user_chat"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="聊天对象"
+              android:textSize="20dp"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+              android:gravity="center"
+              android:background="@drawable/id_button_bg"
+              android:id="@+id/topBar"
+    />
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerViewChat"
+            android:layout_above="@+id/messagelay"
+            android:layout_below="@+id/topBar"
+    />
+    <RelativeLayout android:layout_alignParentBottom="true"
+                    android:id="@+id/messagelay"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+    >
+
+        <EditText android:background="@drawable/shadow"
+                  android:layout_width="270dp"
+                  android:id="@+id/id_et_chatmessage"
+                  android:layout_height="40dp"/>
+        <Button android:text="发送" android:id="@+id/id_bt_sent"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/id_et_chatmessage"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</RelativeLayout>

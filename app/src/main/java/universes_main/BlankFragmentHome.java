@@ -24,7 +24,6 @@ import java.util.Map;
 public class BlankFragmentHome extends Fragment {
     //页面变量 rootView
     View rootView;
-    Button buttonSearch;
     Button buttonMenu;
     public BlankFragmentHome() {
         // Required empty public constructor
@@ -45,15 +44,6 @@ public class BlankFragmentHome extends Fragment {
         return rootView;
     }
     private void initData() {
-        //我的星球页面搜索点击的监听
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent();
-                it.setClass(getActivity(), SearchActivity.class);
-                startActivity(it);
-            }
-        });
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             List<String> username;
 
@@ -79,7 +69,6 @@ public class BlankFragmentHome extends Fragment {
     }
 
     private void initView() {
-        buttonSearch = rootView.findViewById(R.id.idSearchButton);
         buttonMenu = rootView.findViewById(R.id.idMenuButton);
     }
 }

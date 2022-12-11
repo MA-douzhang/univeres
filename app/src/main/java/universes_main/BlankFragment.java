@@ -55,22 +55,23 @@ public class BlankFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if(rootView==null)
-            if(mTextString=="主页")
-            rootView=inflater.inflate(R.layout.content_main, container, false);
-            else if(mTextString=="宇宙世界") {
-                rootView = inflater.inflate(R.layout.navigation_top_universe, container, false);
-            }
-            else if(mTextString=="聊天")
-                rootView=inflater.inflate(R.layout.fragment_first, container, false);
-            else if(mTextString=="我的")
-                rootView=inflater.inflate(R.layout.fragment_first, container, false);
-            else if(mTextString=="好友")
-                rootView=inflater.inflate(R.layout.fragment_first, container, false);
-            else if(mTextString=="推荐")
-                rootView=inflater.inflate(R.layout.fragment_first, container, false);
-            else if(mTextString=="发现")
-                rootView=inflater.inflate(R.layout.universe_world, container, false);
+        rootView=inflater.inflate(R.layout.fragment_first, container, false);
+//        if(rootView==null)
+//            if(mTextString=="主页")
+////            rootView=inflater.inflate(R.layout.content_main, container, false);
+//            else if(mTextString=="宇宙世界") {
+//                rootView = inflater.inflate(R.layout.navigation_top_universe, container, false);
+//            }
+//            else if(mTextString=="聊天")
+//                rootView=inflater.inflate(R.layout.fragment_first, container, false);
+//            else if(mTextString=="我的")
+//                rootView=inflater.inflate(R.layout.fragment_first, container, false);
+//            else if(mTextString=="好友")
+//                rootView=inflater.inflate(R.layout.fragment_first, container, false);
+//            else if(mTextString=="推荐")
+//                rootView=inflater.inflate(R.layout.fragment_first, container, false);
+//            else if(mTextString=="发现")
+//                rootView=inflater.inflate(R.layout.universe_world, container, false);
         initView();
         return rootView;
     }

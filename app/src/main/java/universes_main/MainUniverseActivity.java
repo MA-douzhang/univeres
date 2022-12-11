@@ -2,7 +2,9 @@ package universes_main;
 
 import adapter.MyFragmentPagerAdapter;
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -51,21 +53,51 @@ public class MainUniverseActivity extends AppCompatActivity implements View.OnCl
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //横屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        String processName = getProcessName(this, android.os.Process.myPid());
+        if (processName != null) {
+            boolean defaultProcess = processName.equals("com.example.mainnavigation");
+            if (defaultProcess) {
+                //当前应用的初始化
+                //横屏
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        setContentView(R.layout.navigation);
-        Toast.makeText(MainUniverseActivity.this, "欢迎回来", Toast.LENGTH_SHORT).show();
-        //viewPaper2实现
-        initPager();
-        //导航栏滑动和点击的实现方法
-        initTabView();
-        initData();
+                setContentView(R.layout.navigation);
+                Toast.makeText(MainUniverseActivity.this, "欢迎回来", Toast.LENGTH_SHORT).show();
+                //viewPaper2实现
+                initPager();
+                //导航栏滑动和点击的实现方法
+                initTabView();
+                initData();
 
-        handler = new Handler(){
+            }
+        }
 
-            @Override
-            public void handleMessage(@NonNull @NotNull Message msg) {
+
+    }
+    /**
+     * @param cxt
+     * @param pid
+     * @return 获取进程名称
+     */
+    public static String getProcessName(Context cxt, int pid) {
+        ActivityManager am = (ActivityManager) cxt.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> runningApps = am.getRunningAppProcesses();
+        if (runningApps == null) {
+            return null;
+        }
+        for (ActivityManager.RunningAppProcessInfo procInfo : runningApps) {
+            if (procInfo.pid == pid) {
+                return procInfo.processName;
+            }
+        }
+        return null;
+    }
+    private void initData() {
+        if(handler==null){
+            handler = new Handler(){
+
+                @Override
+                public void handleMessage(@NonNull @NotNull Message msg) {
                     if (msg.what ==0x10){
                         String username = (String) msg.obj;
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainUniverseActivity.this);
@@ -96,46 +128,49 @@ public class MainUniverseActivity extends AppCompatActivity implements View.OnCl
                             }
                         });
                         builder.create().show();
+                    }
+                    super.handleMessage(msg);
                 }
-                super.handleMessage(msg);
-            }
-        };
-    }
+            };
+            EMClient.getInstance().contactManager().setContactListener(new EMContactListener() {
+                // 对方同意了好友请求。
+                @Override
+                public void onFriendRequestAccepted(String username) {
+                    Looper.loop();
+                    Toast.makeText(MainUniverseActivity.this, username + "好友已经添加", Toast.LENGTH_SHORT).show();
+                    Looper.prepare();
+                }
 
-    private void initData() {
-        EMClient.getInstance().contactManager().setContactListener(new EMContactListener() {
-            // 对方同意了好友请求。
-            @Override
-            public void onFriendRequestAccepted(String username) {
-                Toast.makeText(MainUniverseActivity.this, username + "好友已经添加", Toast.LENGTH_SHORT).show();
-            }
+                // 对方拒绝了好友请求。
+                @Override
+                public void onFriendRequestDeclined(String username) {
+                    Looper.loop();
+                    Toast.makeText(MainUniverseActivity.this, username + "已经拒绝", Toast.LENGTH_SHORT).show();
+                    Looper.prepare();
+                }
 
-            // 对方拒绝了好友请求。
-            @Override
-            public void onFriendRequestDeclined(String username) {
-                Toast.makeText(MainUniverseActivity.this, username + "已经拒接", Toast.LENGTH_SHORT).show();
-            }
+                // 接收到好友请求。
+                @Override
+                public void onContactInvited(String username, String reason) {
+                    Log.e("TAG", "收到请求");
+                    Message message = handler.obtainMessage();
+                    message.what = 0x10;
+                    message.obj = username;
+                    handler.sendMessage(message);
+                }
 
-            // 接收到好友请求。
-            @Override
-            public void onContactInvited(String username, String reason) {
-                Log.e("TAG", "收到请求");
-                Message message = handler.obtainMessage();
-                message.what = 0x10;
-                message.obj = username;
-                handler.sendMessage(message);
-            }
+                // 联系人被删除。
+                @Override
+                public void onContactDeleted(String username) {
+                }
 
-            // 联系人被删除。
-            @Override
-            public void onContactDeleted(String username) {
-            }
+                // 联系人已添加。
+                @Override
+                public void onContactAdded(String username) {
+                }
+            });
+        }
 
-            // 联系人已添加。
-            @Override
-            public void onContactAdded(String username) {
-            }
-        });
     }
 
 

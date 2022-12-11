@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeMessages">
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/textViewMessageUserName"
+              android:text="用户名"
+              android:textSize="20dp"
+              android:layout_margin="5dp"
+    />
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="信息"
+              android:layout_marginLeft="5dp"
+              android:id="@+id/textviewMessageReceive"
+              android:layout_below="@+id/textViewMessageUserName"
+              android:textSize="15dp"/>
+    <TextView android:layout_width="25dp"
+              android:layout_height="25dp"
+              android:text="0"
+              android:textSize="18dp"
+              android:textStyle="bold"
+              android:layout_margin="5dp"
+              android:textColor="@color/gray"
+              android:id="@+id/textViewMessageCount"
+              android:layout_alignParentRight="true"
+              android:background="@drawable/id_button_bg"
+              android:layout_marginTop="5dp" android:layout_marginStart="5dp"
+              android:layout_marginEnd="5dp" android:layout_marginBottom="5dp"/>
+</RelativeLayout>

@@ -16,6 +16,8 @@ import com.hyphenate.EMContactListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.exceptions.HyphenateException;
 
+import java.util.List;
+
 public class SearchActivity extends AppCompatActivity {
     //好友添加按钮
     private Button buttonAddFriend;
@@ -39,6 +41,7 @@ public class SearchActivity extends AppCompatActivity {
         buttonAddFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<String> usernames;
                 String userId = editTextSearchFriend.getText().toString();
                 if (userId.equals("")) {
                     Toast.makeText(SearchActivity.this, "账号不能为空", Toast.LENGTH_SHORT).show();
@@ -61,8 +64,18 @@ public class SearchActivity extends AppCompatActivity {
                         EMClient.getInstance().contactManager().aysncAddContact(userId, "请求添加好友", back);
                     }
                 });
-                thread.start();
-                Toast.makeText(SearchActivity.this, "请求已经发送", Toast.LENGTH_SHORT).show();
+                try {
+                    usernames = EMClient.getInstance().contactManager().getContactsFromLocal();
+                } catch (HyphenateException e) {
+                    throw new RuntimeException(e);
+                }
+                if(!usernames.contains(userId)){
+                    thread.start();
+                    Toast.makeText(SearchActivity.this, "请求已经发送", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(SearchActivity.this, "已经添加了该好友", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

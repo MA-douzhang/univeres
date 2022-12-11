@@ -5,16 +5,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <EditText
-            android:id="@+id/et_chatId" android:background="@drawable/shadow"
-            android:layout_width="match_parent" android:hint="输入对方用户名" android:layout_marginTop="10dp"
-            android:layout_height="40dp" android:padding="10dp" android:layout_marginBottom="20dp"/>
-
-    <Button
-            android:layout_below="@+id/et_chatId" android:id="@+id/bt_startChat"
-            android:textColor="@android:color/white"
-            android:layout_width="wrap_content" android:text="发起聊天"
-            android:layout_marginLeft="40dp"
-            android:layout_height="wrap_content" android:background="@drawable/shadow" />
-
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+            android:text="信息"
+              android:textSize="25dp"
+              android:gravity="center"
+              android:background="@drawable/gradual_color_bg"
+              android:id="@+id/topMessageBar"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerViewMessage"
+            android:layout_below="@+id/topMessageBar"/>
 </RelativeLayout>

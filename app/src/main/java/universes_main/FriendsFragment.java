@@ -1,6 +1,7 @@
 package universes_main;
 
 import adapter.UserAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,6 +26,7 @@ public class FriendsFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private RecyclerView recyclerViewFriends;
     private Button buttonFreshen;
+    private Button buttonSearch;
     List<String> usernames;
     View rootView;
     public FriendsFragment() {
@@ -56,6 +58,8 @@ public class FriendsFragment extends Fragment {
     private void initView() {
         recyclerViewFriends = rootView.findViewById(R.id.recyclerViewFriends);
         buttonFreshen = rootView.findViewById(R.id.buttonFresh);
+        buttonSearch = rootView.findViewById(R.id.idSearchButton);
+        //获取所有联系人
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -85,10 +89,22 @@ public class FriendsFragment extends Fragment {
         recyclerViewFriends.setAdapter(userAdapter);
     }
     private void initData() {
+        getFriends();
+        //联系人按钮监听
         buttonFreshen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getFriends();
+            }
+        });
+        //好友搜索
+        //我的星球页面搜索点击的监听
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent();
+                it.setClass(getActivity(), SearchActivity.class);
+                startActivity(it);
             }
         });
     }
